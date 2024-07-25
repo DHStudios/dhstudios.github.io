@@ -1,0 +1,194 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+header{
+  z-index: 999;
+  display: flex;
+  position: absolute;
+  top: 0 ;
+  left: 0;
+  width:100%;
+  justify-content: space-between;
+  padding: 15px 200px;
+  transition: 0.5s ease ;
+  align-items: center;
+}
+
+section{
+  padding: 100px 200px;
+}
+
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: url('https://s21.ax1x.com/2024/07/06/pkW9f3T.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.home .content{
+   z-index: 888;
+   color: #fff;
+   width: 70%;
+   margin-top: 50px;
+   display: none;
+}
+
+.home .content.active {
+  display: block;
+}
+
+.home .content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+.home .content h1 span{
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.home .content p{
+  margin-bottom: 65px;
+}
+
+.home .content a{
+  background: #3D60F4;
+  padding: 15px 35px;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.home .content a:hover {
+  background: #2A3FA8;
+  color: #fff;
+}
+
+.home .media-icons {
+  z-index: 888;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 30px;
+  transition: 0.5s ease;
+  justify-content: space-between;
+  gap:20px
+}
+
+.home .media-icons a{
+  color: #fff;
+  font-size: 1.6em;
+  transition: 0.3s ease;
+} 
+
+.home .media-icons a:hover{
+  transform: scale(1.2);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(51, 51, 51, 0); /* 使用 rgba 设置背景透明度 */
+  color: #fff;
+  font-size: 0.8em;
+  transition: 0.5s ease;
+}
+
+footer a {
+  color: #fff; /* 设置链接颜色为白色 */
+  text-decoration: none; /* 去除下划线 */
+}
+
+@media  (max-width:1040px) {
+  header{
+    padding:  12px 20px;
+  }
+
+  section{
+    padding: 100px 20px;
+  }
+  .home .media-icons {
+    right: 15px;
+
+  }
+  header .navigation{
+    display: none;
+  }
+
+  header .navigation.active{
+    position: fixed;
+    width: 100%;
+    height: 100vh ;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(1,1,1,0.5);
+  }
+
+  header .navigation .navigation-items a::before{
+    background-color: rgb(0, 0, 0);
+    height: 5px;
+  }
+  
+
+  header .navigation.active .navigation-items {
+    background: #fff;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0,5px 25px rgb(1, 1, 1)
+   }
+
+ 
+
+  header .navigation .navigation-items a{
+    color: #000;
+    font-size: 1.2em;
+    margin: 20px;
+ }
+
+  .menu-btn{
+    background: url(menu.png)no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3 ease;
+  }
+  .menu-btn.active{
+    z-index: 999;
+    background: url(close.png)no-repeat;
+    background-size: 25px;
+    background-position: center;
+    transition: 0.3 ease
+  }
+  footer {
+    font-size: 0.6em;
+    background: rgba(51, 51, 51, 0);
+  }
+}
